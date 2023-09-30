@@ -16,6 +16,7 @@ export type ThemePalette = (typeof themePalettes)[number];
 
 export const themeProperties = [
     "bg",
+    "bg-extra",
     "bg-hover",
     "color",
     "color-extra",

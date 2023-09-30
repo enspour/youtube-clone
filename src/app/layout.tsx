@@ -14,7 +14,7 @@ import "@/assets/styles/reset.css";
 import styles from "./layout.module.scss";
 
 export const metadata: Metadata = {
-    title: "Youtube-Clone",
+    title: "CloneTube",
 };
 
 export default function RootLayout({

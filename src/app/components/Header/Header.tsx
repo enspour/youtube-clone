@@ -1,25 +1,10 @@
-"use client";
+import { memo } from "react";
 
-import Link from "next/link";
-import { FC } from "react";
+import { withAuth } from "@/components/utils/withAuth";
 
-import { Icon } from "@/components/ui/Icon";
+import HeaderGuest from "./HeaderGuest";
+import HeaderUser from "./HeaderUser";
 
-import { useSidebar } from "@/hooks/client";
+const Header = withAuth(HeaderUser, HeaderGuest);
 
-import SidebarIcon from "@/assets/icons/header/sidebar.svg";
-
-import styles from "./Header.module.scss";
-
-const Header: FC = () => {
-    const { toggle } = useSidebar();
-
-    return (
-        <div className={styles.header}>
-            <Icon svg={SidebarIcon} onClick={toggle} />
-            <Link href="/">CloneTube</Link>
-        </div>
-    );
-};
-
-export default Header;
+export default memo(Header);

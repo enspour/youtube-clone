@@ -1,0 +1,16 @@
+.button {
+    --bg: var(--theme-primary-bg);
+    --bg-hover: var(--theme-primary-bg-hover);
+    --color: var(--theme-primary-color);
+
+    padding: 0.6rem 1.8rem;
+    color: var(--color);
+    background-color: var(--bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 2rem;
+    transform: 0.2s;
+
+    &:hover {
+        background-color: var(--bg-hover);
+    }
+}

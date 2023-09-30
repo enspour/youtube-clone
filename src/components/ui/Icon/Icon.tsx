@@ -13,16 +13,22 @@ export interface SvgProps {
 interface IconProps {
     svg: FC<SvgProps>;
     onClick?: (e: MouseEvent<HTMLElement>) => void;
+    cursor?: "pointer" | "auto";
     palette?: ThemePalette;
 }
 
-const Icon: FC<IconProps> = ({ svg: Svg, onClick, palette = "primary" }) => {
+const Icon: FC<IconProps> = ({
+    svg: Svg,
+    onClick,
+    cursor = onClick ? "pointer" : "auto",
+    palette = "primary",
+}) => {
     const handler = (e: MouseEvent<HTMLElement>) => {
         onClick && onClick(e);
     };
 
     return (
-        <div style={getStyle(onClick ? "pointer" : "auto")} onClick={handler}>
+        <div style={getStyle(cursor)} onClick={handler}>
             <Svg fill={getThemeColor("icon", palette)} />
         </div>
     );

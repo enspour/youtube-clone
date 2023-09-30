@@ -1,0 +1,29 @@
+.container {
+    --bg: var(--theme-primary-bg);
+    --bg-extra: var(--theme-primary-bg-extra);
+    --color: var(--theme-primary-color);
+    --border: var(--theme-primary-border);
+
+    width: 100%;
+    display: flex;
+    color: var(--color);
+    background-color: var(--bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.input {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.button {
+    width: 7rem;
+    min-width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-extra);
+}

@@ -1,0 +1,18 @@
+.container {
+    --bg: var(--theme-primary-bg);
+    --color: var(--theme-primary-color);
+    --border: var(--theme-primary-border);
+
+    width: 100%;
+    color: var(--color);
+    background-color: var(--bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.input {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}

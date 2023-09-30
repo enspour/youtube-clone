@@ -36,8 +36,7 @@ const SidebarMenu: FC = () => {
             </MenuGroup>
 
             <MenuGroup title="Подписки">
-                <MenuLink href="/channel/math">Math</MenuLink>
-                <MenuLink href="/channel/math">History</MenuLink>
+                <MenuLink href="/channel/channel">Channels</MenuLink>
             </MenuGroup>
         </Menu>
     );

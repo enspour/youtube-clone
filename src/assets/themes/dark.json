@@ -1,5 +1,6 @@
 {
     "--theme-primary-bg": "#0F0F0F",
+    "--theme-primary-bg-extra": "#272727",
     "--theme-primary-bg-hover": "#272727",
     "--theme-primary-color": "#E4F1F1",
     "--theme-primary-color-extra": "#AAAAAA",
@@ -9,7 +10,8 @@
     "--theme-primary-icon": "#E4F1F1",
 
     "--theme-secondary-bg": "#272727",
-    "--theme-secondary-bg-hover": "#272727",
+    "--theme-secondary-bg-extra": "#515151",
+    "--theme-secondary-bg-hover": "#515151",
     "--theme-secondary-color": "#B3B3B3",
     "--theme-secondary-color-extra": "#7F7F7F",
     "--theme-secondary-border": "#4C4C4C",

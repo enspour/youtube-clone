@@ -16,6 +16,7 @@ export const useVideoElementCreator = () => {
         const element = document.createElement("video");
 
         element.classList.add(styles.video);
+        element.volume = 0.2;
         element.controls = true;
 
         setVideoElement(element);
