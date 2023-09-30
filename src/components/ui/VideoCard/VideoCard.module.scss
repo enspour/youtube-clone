@@ -1,0 +1,41 @@
+.video {
+    --color: var(--theme-primary-color);
+    --color-extra: var(--theme-primary-color-extra);
+
+    height: 100%;
+    width: 100%;
+    min-width: 30rem;
+    max-width: 40rem;
+    display: flex;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.info {
+    min-width: 20rem;
+    display: flex;
+    gap: 0.8rem;
+
+    &__name {
+        font-weight: 500;
+        font-size: 1.8rem;
+        color: var(--color);
+    }
+
+    &__username,
+    &__stats {
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
+        color: var(--color-extra);
+    }
+
+    &__username:hover {
+        color: var(--color);
+    }
+}
+
+.preview {
+    aspect-ratio: 16 / 9;
+    border-radius: 1.4rem;
+    overflow: hidden;
+}

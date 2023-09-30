@@ -1,0 +1,52 @@
+.container {
+    height: calc(100vh - 5.6rem);
+    position: sticky;
+    top: 5.6rem;
+    z-index: 10;
+}
+
+.sidebar {
+    height: 100%;
+    background-color: var(--theme-primary-bg);
+    transition: width 0.2s, padding 0.2s;
+}
+
+.sidebar__full {
+    width: 24rem;
+    padding: 0.5rem 1rem;
+}
+
+.sidebar__mini {
+    width: 10rem;
+    padding: 0.5rem 0rem;
+
+    &__item {
+        width: 100%;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.sidebar__static {
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
+}
+
+.sidebar__dynamic {
+    position: absolute;
+    transition: left 0.1s;
+
+    &__open {
+        left: 0;
+    }
+
+    &__close {
+        left: -24rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+        display: none;
+    }
+}

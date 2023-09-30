@@ -1,0 +1,50 @@
+.skeleton__rectangle,
+.skeleton__circle,
+.skeleton__text {
+    --skeleton-bg: var(--theme-primary-skeleton-bg);
+    --skeleton-shine: var(--theme-primary-skeleton-shine);
+
+    background-size: 200%;
+    animation: shine-loading 2s infinite ease-out;
+}
+
+.skeleton__rectangle {
+    background-image: linear-gradient(
+        90deg,
+        var(--skeleton-bg) 0rem,
+        var(--skeleton-shine) 3rem,
+        var(--skeleton-bg) 6rem
+    );
+}
+
+.skeleton__circle {
+    border-radius: 50%;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--skeleton-bg) 0rem,
+        var(--skeleton-shine) 2rem,
+        var(--skeleton-bg) 4rem
+    );
+}
+
+.skeleton__text {
+    border-radius: 1rem;
+
+    background-image: linear-gradient(
+        90deg,
+        var(--skeleton-bg) 0rem,
+        var(--skeleton-shine) 3rem,
+        var(--skeleton-bg) 6rem
+    );
+}
+
+@keyframes shine-loading {
+    0% {
+        background-position: 50%;
+    }
+    40%,
+    100% {
+        background-position: -100%;
+    }
+}

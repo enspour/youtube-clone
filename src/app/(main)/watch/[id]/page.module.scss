@@ -1,0 +1,32 @@
+.container {
+    container-name: layout;
+    container-type: inline-size;
+
+    width: 100%;
+}
+
+.layout {
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+        "player player player suggested"
+        "main   main   main   suggested"
+        "main   main   main   suggested";
+    grid-template-columns: 1fr 1fr 1fr minmax(40rem, 1fr);
+    grid-template-rows: fit-content(100%) 1fr 1fr;
+}
+
+@container layout (max-width: 1200px) {
+    .layout {
+        grid-template-areas:
+            "player    player    player    player"
+            "suggested suggested suggested suggested"
+            "main      main      main      main";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.main {
+    padding: 1rem;
+    grid-area: main;
+}

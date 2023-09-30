@@ -1,0 +1,25 @@
+.player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: black;
+    border-radius: 2rem;
+    overflow: hidden;
+
+    &:hover {
+        .header {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+}

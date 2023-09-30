@@ -1,0 +1,25 @@
+.suggested {
+    padding: 1rem;
+    grid-area: suggested;
+
+    &__vertical {
+        display: block;
+    }
+
+    &__horizontal {
+        display: none;
+        overflow-x: scroll;
+    }
+}
+
+@container layout (max-width: 1200px) {
+    .suggested {
+        &__vertical {
+            display: none;
+        }
+
+        &__horizontal {
+            display: block;
+        }
+    }
+}

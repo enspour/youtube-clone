@@ -1,0 +1,9 @@
+.player {
+    width: 100%;
+    max-width: 50rem;
+    aspect-ratio: 16 / 9;
+    background-color: black;
+    border-radius: 1rem;
+    overflow: hidden;
+    pointer-events: none;
+}
