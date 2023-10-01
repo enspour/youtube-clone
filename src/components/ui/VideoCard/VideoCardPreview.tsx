@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 
 import { Video } from "@/interfaces";
@@ -11,7 +12,7 @@ interface VideoCardPreviewProps {
 const VideoCardPreview: FC<VideoCardPreviewProps> = ({ video }) => {
     return (
         <div className={styles.preview}>
-            <img src={video.preview} />
+            <Image src={video.preview} alt="preview" width="400" height="225" />
         </div>
     );
 };
