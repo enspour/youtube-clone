@@ -2,10 +2,12 @@ import { cookies } from "next/headers";
 
 import { isThemeName } from "@/interfaces";
 
+import { THEME_COOKIE_NAME } from "@/constants";
+
 export const useTheme = () => {
     const cookieStore = cookies();
 
-    const value = cookieStore.get("__theme-name")?.value;
+    const value = cookieStore.get(THEME_COOKIE_NAME)?.value;
     const name = isThemeName(value) ? value : "dark";
 
     const load = async () => {

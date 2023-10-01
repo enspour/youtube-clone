@@ -2,13 +2,13 @@
 
 import { FC } from "react";
 
-import useInitialActiveId from "./useInitialActiveId";
+import useInitialActiveId from "../useInitialActiveId";
 
 import { Menu, MenuGroup, MenuLink } from "@/components/ui/Menu";
 
-import styles from "./Sidebar.module.scss";
+import styles from "../Sidebar.module.scss";
 
-const SidebarMenuMini: FC = () => {
+const SidebarMenuMiniUnAuth: FC = () => {
     const initialActiveId = useInitialActiveId();
 
     return (
@@ -34,4 +34,4 @@ const SidebarMenuMini: FC = () => {
     );
 };
 
-export default SidebarMenuMini;
+export default SidebarMenuMiniUnAuth;

@@ -1,8 +1,6 @@
 "use client";
 
-import { CSSProperties, FC, useRef } from "react";
-
-import SidebarMenu from "./SidebarMenu";
+import { CSSProperties, FC, ReactNode, useRef } from "react";
 
 import { useIsVideoPage, useOutsideClick } from "@/hooks/client";
 
@@ -12,7 +10,11 @@ import { classes } from "@/utils";
 
 import styles from "./Sidebar.module.scss";
 
-const SidebarDynamic: FC = () => {
+interface SidebarDynamicProps {
+    normal: ReactNode;
+}
+
+const SidebarDynamic: FC<SidebarDynamicProps> = ({ normal }) => {
     const sidebarRef = useRef(null);
 
     const isVideoPage = useIsVideoPage();
@@ -35,7 +37,7 @@ const SidebarDynamic: FC = () => {
             )}
             style={getStyle(isVideoPage)}
         >
-            <SidebarMenu />
+            {normal}
         </div>
     );
 };

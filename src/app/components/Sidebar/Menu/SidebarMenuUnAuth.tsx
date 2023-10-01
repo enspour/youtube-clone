@@ -2,11 +2,11 @@
 
 import { FC } from "react";
 
-import useInitialActiveId from "./useInitialActiveId";
-
 import { Menu, MenuGroup, MenuLink } from "@/components/ui/Menu";
 
-const SidebarMenu: FC = () => {
+import useInitialActiveId from "../useInitialActiveId";
+
+const SidebarMenuUnAuth: FC = () => {
     const initialActiveId = useInitialActiveId();
 
     return (
@@ -29,17 +29,9 @@ const SidebarMenu: FC = () => {
                 <MenuLink id="history" href="/history">
                     История
                 </MenuLink>
-
-                <MenuLink id="playlist/wl" href="/playlist/wl">
-                    Смотреть позже
-                </MenuLink>
-            </MenuGroup>
-
-            <MenuGroup title="Подписки">
-                <MenuLink href="/channel/channel">Channels</MenuLink>
             </MenuGroup>
         </Menu>
     );
 };
 
-export default SidebarMenu;
+export default SidebarMenuUnAuth;

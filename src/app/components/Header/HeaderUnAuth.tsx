@@ -1,13 +1,13 @@
 import { FC } from "react";
 
-import HeaderLogin from "./HeaderLogin";
-import HeaderLogo from "./HeaderLogo";
-import HeaderSearch from "./HeaderSearch";
-import HeaderSidebarToggle from "./HeaderSidebarToggle";
+import HeaderLogin from "./catalog/HeaderLogin";
+import HeaderLogo from "./catalog/HeaderLogo";
+import HeaderSearch from "./catalog/HeaderSearch";
+import HeaderSidebarToggle from "./catalog/HeaderSidebarToggle";
 
 import styles from "./Header.module.scss";
 
-const HeaderGuest: FC = () => {
+const HeaderUnAuth: FC = () => {
     return (
         <div className={styles.header}>
             <div className={styles.header__start}>
@@ -26,4 +26,4 @@ const HeaderGuest: FC = () => {
     );
 };
 
-export default HeaderGuest;
+export default HeaderUnAuth;

@@ -1,9 +1,6 @@
 "use client";
 
-import { FC } from "react";
-
-import SidebarMenu from "./SidebarMenu";
-import SidebarMenuMini from "./SidebarMenuMini";
+import { FC, ReactNode } from "react";
 
 import { useSidebarStore } from "@/stores";
 
@@ -11,7 +8,12 @@ import { classes } from "@/utils";
 
 import styles from "./Sidebar.module.scss";
 
-const SidebarStatic: FC = () => {
+interface SidebarStaticProps {
+    normal: ReactNode;
+    minimized: ReactNode;
+}
+
+const SidebarStatic: FC<SidebarStaticProps> = ({ normal, minimized }) => {
     const isMinimized = useSidebarStore((state) => state.isMinimized);
 
     return (
@@ -22,7 +24,7 @@ const SidebarStatic: FC = () => {
                 isMinimized ? styles.sidebar__mini : styles.sidebar__full
             )}
         >
-            {isMinimized ? <SidebarMenuMini /> : <SidebarMenu />}
+            {!isMinimized ? normal : minimized}
         </div>
     );
 };

@@ -1,31 +1,16 @@
-"use client";
+import { FC, memo } from "react";
 
-import { FC } from "react";
-
-import SidebarDynamic from "./SidebarDynamic";
-import SidebarStatic from "./SidebarStatic";
-
-import { useIsVideoPage } from "@/hooks/client";
-
-import styles from "./Sidebar.module.scss";
+import SidebarMenu from "./Menu/SidebarMenu";
+import SidebarMenuMini from "./MenuMini/SidebarMenuMini";
+import SidebarContainer from "./SidebarContainer";
 
 const Sidebar: FC = () => {
-    const isVideoPage = useIsVideoPage();
-
-    if (isVideoPage) {
-        return (
-            <div className={styles.container}>
-                <SidebarDynamic />
-            </div>
-        );
-    }
-
     return (
-        <div className={styles.container}>
-            <SidebarStatic />
-            <SidebarDynamic />
-        </div>
+        <SidebarContainer
+            normal={<SidebarMenu />}
+            minimized={<SidebarMenuMini />}
+        />
     );
 };
 
-export default Sidebar;
+export default memo(Sidebar);
