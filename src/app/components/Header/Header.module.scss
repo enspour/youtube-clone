@@ -44,3 +44,24 @@
     font-size: 2rem;
     font-weight: 600;
 }
+
+.header__menu {
+    width: 30rem;
+
+    &__user {
+        padding: 1rem 2rem;
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.header__notification {
+    width: 40rem;
+    height: 50rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--theme-secondary-color);
+    background-color: var(--theme-secondary-bg);
+    border-radius: 1rem;
+}

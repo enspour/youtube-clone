@@ -9,10 +9,10 @@
     "--theme-primary-skeleton-shine": "#6E6E6E",
     "--theme-primary-icon": "#E4F1F1",
 
-    "--theme-secondary-bg": "#272727",
+    "--theme-secondary-bg": "#282828",
     "--theme-secondary-bg-extra": "#515151",
-    "--theme-secondary-bg-hover": "#515151",
-    "--theme-secondary-color": "#B3B3B3",
+    "--theme-secondary-bg-hover": "#3E3E3E",
+    "--theme-secondary-color": "#F1F1F1",
     "--theme-secondary-color-extra": "#7F7F7F",
     "--theme-secondary-border": "#4C4C4C",
     "--theme-secondary-skeleton-bg": "#888888",

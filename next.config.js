@@ -9,6 +9,18 @@ const nextConfig = {
 
         return config;
     },
+
+    sassOptions: {
+        logger: {
+            warn(message) {
+                console.warn(message);
+            },
+
+            debug(message) {
+                console.log(message);
+            },
+        },
+    },
 };
 
 module.exports = nextConfig;
