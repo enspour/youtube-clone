@@ -1,51 +1,35 @@
 "use client";
 
-import {
-    FC,
-    ReactNode,
-    createContext,
-    useContext,
-    useEffect,
-    useState,
-} from "react";
+import { usePathname } from "next/navigation";
+import { FC, ReactNode, createContext, useContext } from "react";
 
-interface ActiveMenuContext {
-    activeId: string;
-    setActiveId: (id: string) => void;
+interface ActiveLinkContext {
+    activePathname: string;
 }
 
-const initialActiveMenu: ActiveMenuContext = {
-    activeId: "",
-    setActiveId: () => {},
+const initialActiveLink: ActiveLinkContext = {
+    activePathname: "",
 };
 
-const ActiveMenu = createContext<ActiveMenuContext>(initialActiveMenu);
+const ActiveLink = createContext<ActiveLinkContext>(initialActiveLink);
 
 interface MenuProviderProps {
     children: ReactNode;
-    initialActiveId?: string;
 }
 
-const MenuProvider: FC<MenuProviderProps> = ({
-    children,
-    initialActiveId = "",
-}) => {
-    const [activeId, setActiveId] = useState<string>(initialActiveId);
-
-    useEffect(() => {
-        setActiveId(initialActiveId);
-    }, [initialActiveId]);
+const MenuProvider: FC<MenuProviderProps> = ({ children }) => {
+    const pathname = usePathname();
 
     return (
-        <ActiveMenu.Provider value={{ activeId, setActiveId }}>
+        <ActiveLink.Provider value={{ activePathname: pathname }}>
             {children}
-        </ActiveMenu.Provider>
+        </ActiveLink.Provider>
     );
 };
 
-export const useActiveMenu = () => {
-    const { activeId, setActiveId } = useContext(ActiveMenu);
-    return [activeId, setActiveId] as const;
+export const useActiveLink = () => {
+    const { activePathname } = useContext(ActiveLink);
+    return { activePathname };
 };
 
 export default MenuProvider;

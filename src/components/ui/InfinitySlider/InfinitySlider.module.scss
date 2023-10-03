@@ -1,0 +1,12 @@
+.slider {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    transition: inherit;
+    overflow: hidden;
+}

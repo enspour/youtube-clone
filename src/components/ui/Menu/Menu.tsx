@@ -10,17 +10,12 @@ import styles from "./Menu.module.scss";
 
 interface MenuProps {
     children: ReactNode | ReactNode[];
-    initialActiveId?: string;
     palette?: ThemePalette;
 }
 
-const Menu: FC<MenuProps> = ({
-    children,
-    initialActiveId,
-    palette = "primary",
-}) => {
+const Menu: FC<MenuProps> = ({ children, palette = "primary" }) => {
     return (
-        <MenuProvider initialActiveId={initialActiveId}>
+        <MenuProvider>
             <div className={styles.menu} style={getStyle(palette)}>
                 {children}
             </div>

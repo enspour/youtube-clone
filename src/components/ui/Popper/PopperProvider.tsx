@@ -13,11 +13,15 @@ import { useOutsideClick } from "@/hooks/client";
 
 interface PopperContext {
     isOpen: boolean;
+    open: () => void;
+    close: () => void;
     toggle: () => void;
 }
 
 const initialPopperContext: PopperContext = {
     isOpen: false,
+    open: () => {},
+    close: () => {},
     toggle: () => {},
 };
 
@@ -55,12 +59,14 @@ const PopperProvider: FC<PopperProviderProps> = ({
 }) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const open = () => setIsOpen(true);
+    const close = () => setIsOpen(false);
     const toggle = () => setIsOpen((prev) => !prev);
 
     useOutsideClick(popperRef, () => setIsOpen(false), [isOpen]);
 
     return (
-        <Popper.Provider value={{ isOpen, toggle }}>
+        <Popper.Provider value={{ isOpen, open, close, toggle }}>
             <PopperStyle.Provider value={{ type, gap }}>
                 {children}
             </PopperStyle.Provider>
@@ -69,8 +75,8 @@ const PopperProvider: FC<PopperProviderProps> = ({
 };
 
 export const usePopper = () => {
-    const { isOpen, toggle } = useContext(Popper);
-    return { isOpen, toggle };
+    const { isOpen, open, close, toggle } = useContext(Popper);
+    return { isOpen, open, close, toggle };
 };
 
 export const usePopperStyle = () => {

@@ -1,29 +1,21 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { FC } from "react";
 
-import { Menu, MenuButton, MenuGroup } from "@/components/ui/Menu";
+import { Menu, MenuSlider, MenuSliderSlide } from "@/components/ui/Menu";
 import { Popper, PopperContent, PopperToggle } from "@/components/ui/Popper";
 import { UserAvatarSkeleton } from "@/components/ui/UserAvatar";
 
-import { useCookies } from "@/hooks/client";
-
-import { IS_AUTH_COOKIE_NAME } from "@/constants";
+import HeaderMenuAccounts from "./HeaderMenu/HeaderMenuAccounts";
+import HeaderMenuCountry from "./HeaderMenu/HeaderMenuCountry";
+import HeaderMenuLanguage from "./HeaderMenu/HeaderMenuLanguage";
+import HeaderMenuMain from "./HeaderMenu/HeaderMenuMain";
+import HeaderMenuSecurity from "./HeaderMenu/HeaderMenuSecurity";
+import HeaderMenuTheme from "./HeaderMenu/HeaderMenuTheme";
 
 import styles from "../Header.module.scss";
 
 const HeaderMenu: FC = () => {
-    const router = useRouter();
-    const cookies = useCookies();
-
-    const logout = () => {
-        cookies.set(IS_AUTH_COOKIE_NAME, false);
-        router.refresh();
-    };
-
-    const empty = () => {};
-
     return (
         <Popper type="right">
             <PopperToggle>
@@ -33,50 +25,31 @@ const HeaderMenu: FC = () => {
             <PopperContent>
                 <div className={styles.header__menu}>
                     <Menu palette="secondary">
-                        <MenuGroup>
-                            <div className={styles.header__menu__user}>
-                                <UserAvatarSkeleton diameter="4rem" />
+                        <MenuSlider>
+                            <MenuSliderSlide name="main">
+                                <HeaderMenuMain />
+                            </MenuSliderSlide>
 
-                                <div>
-                                    <div>Username</div>
-                                    <div>@UserUniqueID</div>
-                                </div>
-                            </div>
-                        </MenuGroup>
+                            <MenuSliderSlide name="accounts">
+                                <HeaderMenuAccounts />
+                            </MenuSliderSlide>
 
-                        <MenuGroup>
-                            <MenuButton onClick={empty}>Channel</MenuButton>
+                            <MenuSliderSlide name="theme">
+                                <HeaderMenuTheme />
+                            </MenuSliderSlide>
 
-                            <MenuButton onClick={empty}>
-                                Change Account
-                            </MenuButton>
+                            <MenuSliderSlide name="language">
+                                <HeaderMenuLanguage />
+                            </MenuSliderSlide>
 
-                            <MenuButton onClick={logout}>Logout</MenuButton>
-                        </MenuGroup>
+                            <MenuSliderSlide name="security">
+                                <HeaderMenuSecurity />
+                            </MenuSliderSlide>
 
-                        <MenuGroup>
-                            <MenuButton onClick={empty}>Theme: Dark</MenuButton>
-
-                            <MenuButton onClick={empty}>
-                                Language: English
-                            </MenuButton>
-
-                            <MenuButton onClick={empty}>
-                                Security Mode: Disable
-                            </MenuButton>
-
-                            <MenuButton onClick={empty}>
-                                Country: Unknown
-                            </MenuButton>
-                        </MenuGroup>
-
-                        <MenuGroup>
-                            <MenuButton onClick={empty}>Settings</MenuButton>
-                        </MenuGroup>
-
-                        <MenuGroup>
-                            <MenuButton onClick={empty}>About</MenuButton>
-                        </MenuGroup>
+                            <MenuSliderSlide name="country">
+                                <HeaderMenuCountry />
+                            </MenuSliderSlide>
+                        </MenuSlider>
                     </Menu>
                 </div>
             </PopperContent>

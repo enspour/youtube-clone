@@ -2,31 +2,27 @@
 
 import { FC } from "react";
 
-import useInitialActiveId from "../useInitialActiveId";
-
 import { Menu, MenuGroup, MenuLink } from "@/components/ui/Menu";
 
 import styles from "../Sidebar.module.scss";
 
 const SidebarMenuMiniUnAuth: FC = () => {
-    const initialActiveId = useInitialActiveId();
-
     return (
-        <Menu initialActiveId={initialActiveId}>
+        <Menu>
             <MenuGroup>
-                <MenuLink id="home" href="/">
+                <MenuLink href="/">
                     <div className={styles.sidebar__mini__item}>Главная</div>
                 </MenuLink>
 
-                <MenuLink id="subs" href="/subscriptions">
+                <MenuLink href="/subscriptions">
                     <div className={styles.sidebar__mini__item}>Подписки</div>
                 </MenuLink>
 
-                <MenuLink id="library" href="/library">
+                <MenuLink href="/library">
                     <div className={styles.sidebar__mini__item}>Библиотека</div>
                 </MenuLink>
 
-                <MenuLink id="history" href="/history">
+                <MenuLink href="/history">
                     <div className={styles.sidebar__mini__item}>История</div>
                 </MenuLink>
             </MenuGroup>
