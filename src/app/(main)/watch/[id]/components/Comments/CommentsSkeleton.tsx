@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 
 const CommentsSkeleton: FC = () => {
-    return <div>CommentsSkeleton</div>;
+    return <div></div>;
 };
 
 export default memo(CommentsSkeleton);

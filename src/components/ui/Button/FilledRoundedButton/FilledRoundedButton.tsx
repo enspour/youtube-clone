@@ -6,24 +6,26 @@ import { ThemePalette } from "@/interfaces";
 
 import { getThemeColors } from "@/utils";
 
-import styles from "./FilledButton.module.scss";
+import styles from "./FilledRoundedButton.module.scss";
 
-export interface FilledButtonProps {
-    type: "filled";
+export interface FilledRoundedButtonProps {
+    type: "filled rounded";
     children: ReactNode | ReactNode[];
-    onClick: (e: MouseEvent<HTMLButtonElement>) => void;
+    diameter?: `${number}rem`;
+    onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
     palette?: ThemePalette;
 }
 
-const FilledButton: FC<FilledButtonProps> = ({
+const FilledRoundedButton: FC<FilledRoundedButtonProps> = ({
     children,
+    diameter = "3.6rem",
     onClick,
     palette = "primary",
 }) => {
     return (
         <button
             className={styles.button}
-            style={getStyle(palette)}
+            style={getStyle(diameter, palette)}
             onClick={onClick}
         >
             {children}
@@ -31,8 +33,10 @@ const FilledButton: FC<FilledButtonProps> = ({
     );
 };
 
-const getStyle = (palette: ThemePalette) => ({
+const getStyle = (diameter: `${number}rem`, palette: ThemePalette) => ({
+    width: diameter,
+    height: diameter,
     ...getThemeColors(["bg", "bg-hover", "color"], palette),
 });
 
-export default FilledButton;
+export default FilledRoundedButton;

@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FC, FocusEvent, MouseEvent, useState } from "react";
 
-import { Icon } from "../Icon";
+import { Icon } from "../../Icon";
 
 import { ThemePalette } from "@/interfaces";
 

@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
 
-import SearchInput, { SearchInputProps } from "./SearchInput";
-import TextInput, { TextInputProps } from "./TextInput";
+import SearchInput, { SearchInputProps } from "./SearchInput/SearchInput";
+import TextInput, { TextInputProps } from "./TextInput/TextInput";
 
 type InputProps = TextInputProps | SearchInputProps;
 

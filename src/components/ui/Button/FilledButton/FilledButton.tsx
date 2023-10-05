@@ -6,16 +6,16 @@ import { ThemePalette } from "@/interfaces";
 
 import { getThemeColors } from "@/utils";
 
-import styles from "./OutlinedButton.module.scss";
+import styles from "./FilledButton.module.scss";
 
-export interface OutlinedButtonProps {
-    type: "outlined";
+export interface FilledButtonProps {
+    type: "filled";
     children: ReactNode | ReactNode[];
-    onClick: (e: MouseEvent<HTMLButtonElement>) => void;
+    onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
     palette?: ThemePalette;
 }
 
-const OutlinedButton: FC<OutlinedButtonProps> = ({
+const FilledButton: FC<FilledButtonProps> = ({
     children,
     onClick,
     palette = "primary",
@@ -32,7 +32,7 @@ const OutlinedButton: FC<OutlinedButtonProps> = ({
 };
 
 const getStyle = (palette: ThemePalette) => ({
-    ...getThemeColors(["bg", "bg-hover", "color", "border"], palette),
+    ...getThemeColors(["bg", "bg-hover", "color"], palette),
 });
 
-export default OutlinedButton;
+export default FilledButton;

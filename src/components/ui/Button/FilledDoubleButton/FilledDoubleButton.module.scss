@@ -1,0 +1,32 @@
+.button {
+    --bg: var(--theme-primary-bg);
+    --bg-hover: var(--theme-primary-bg-hover);
+    --color: var(--theme-primary-color);
+    --border: var(--theme-primary-border);
+
+    height: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+    background-color: var(--bg);
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.2s;
+
+    & button {
+        height: 3.6rem;
+        padding: 0 2.4rem;
+
+        &:hover {
+            background-color: var(--bg-hover);
+        }
+    }
+}
+
+.line {
+    margin: auto 0;
+    height: 60%;
+    width: 0.1rem;
+    background-color: var(--border);
+}

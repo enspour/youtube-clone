@@ -1,9 +1,24 @@
 import { FC, memo } from "react";
 
-import FilledButton, { FilledButtonProps } from "./FilledButton";
-import OutlinedButton, { OutlinedButtonProps } from "./OutlinedButton";
+import FilledButton, { FilledButtonProps } from "./FilledButton/FilledButton";
 
-type ButtonProps = FilledButtonProps | OutlinedButtonProps;
+import FilledDoubleButton, {
+    FilledDoubleButtonProps,
+} from "./FilledDoubleButton/FilledDoubleButton";
+
+import FilledRoundedButton, {
+    FilledRoundedButtonProps,
+} from "./FilledRoundedButton/FilledRoundedButton";
+
+import OutlinedButton, {
+    OutlinedButtonProps,
+} from "./OutlinedButton/OutlinedButton";
+
+type ButtonProps =
+    | FilledButtonProps
+    | FilledDoubleButtonProps
+    | FilledRoundedButtonProps
+    | OutlinedButtonProps;
 
 const Button: FC<ButtonProps> = (props) => {
     const { type } = props;
@@ -11,6 +26,10 @@ const Button: FC<ButtonProps> = (props) => {
     switch (type) {
         case "filled":
             return <FilledButton {...props} />;
+        case "filled double":
+            return <FilledDoubleButton {...props} />;
+        case "filled rounded":
+            return <FilledRoundedButton {...props} />;
         case "outlined":
             return <OutlinedButton {...props} />;
     }

@@ -9,6 +9,7 @@ import { Html } from "./components/Html";
 import { Sidebar } from "./components/Sidebar";
 
 import "@/assets/styles/global.scss";
+import "@/assets/styles/helpers.scss";
 import "@/assets/styles/reset.css";
 
 import styles from "./layout.module.scss";
