@@ -7,14 +7,14 @@ import { Button } from "@/components/ui/Button";
 
 import { useCookies } from "@/hooks/client";
 
-import { IS_AUTH_COOKIE_NAME } from "@/constants";
+import { COOKIE_IS_AUTH } from "@/constants";
 
 const HeaderLogin: FC = () => {
     const router = useRouter();
     const cookies = useCookies();
 
     const login = () => {
-        cookies.set(IS_AUTH_COOKIE_NAME, true);
+        cookies.set(COOKIE_IS_AUTH, true);
         router.refresh();
     };
 

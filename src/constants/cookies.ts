@@ -1,2 +1,2 @@
-export const THEME_COOKIE_NAME = "__theme-name";
-export const IS_AUTH_COOKIE_NAME = "__is-auth";
+export const COOKIE_THEME_NAME = "__theme-name";
+export const COOKIE_IS_AUTH = "__is-auth";

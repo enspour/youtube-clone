@@ -2,11 +2,15 @@
 
 import { FC, memo } from "react";
 
-import { useVideoElementCreator } from "./useVideoElementCreator";
+import { useVideoPlayerCreator } from "./useVideoPlayerCreator";
+import { useVideoPlayerEvents } from "./useVideoPlayerEvents";
 import { useVideoPlayerMaximizer } from "./useVideoPlayerMaximizer";
+import { useVideoPlayerUpdater } from "./useVideoPlayerUpdater";
 
 const VideoPlayerSetup: FC = () => {
-    useVideoElementCreator();
+    useVideoPlayerCreator();
+    useVideoPlayerUpdater();
+    useVideoPlayerEvents();
     useVideoPlayerMaximizer();
 
     return null;

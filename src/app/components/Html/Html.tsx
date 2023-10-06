@@ -14,9 +14,9 @@ interface HtmlProps {
 }
 
 const Html = async ({ children }: HtmlProps) => {
-    const { load } = useTheme();
+    const { fetch } = useTheme();
 
-    const theme = await load();
+    const theme = await fetch();
 
     return (
         <html lang="eu" style={{ ...theme }}>

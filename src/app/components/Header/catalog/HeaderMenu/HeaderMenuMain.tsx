@@ -10,7 +10,7 @@ import HeaderMenuForward from "./HeaderMenuForward";
 
 import { useCookies } from "@/hooks/client";
 
-import { IS_AUTH_COOKIE_NAME } from "@/constants";
+import { COOKIE_IS_AUTH } from "@/constants";
 
 import styles from "../../Header.module.scss";
 
@@ -19,7 +19,7 @@ const HeaderMenuMain: FC = () => {
     const cookies = useCookies();
 
     const logout = () => {
-        cookies.set(IS_AUTH_COOKIE_NAME, false);
+        cookies.set(COOKIE_IS_AUTH, false);
         router.refresh();
     };
 

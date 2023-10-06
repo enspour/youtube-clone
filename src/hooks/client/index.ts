@@ -2,6 +2,7 @@ export * from "./use";
 export * from "./useCookies";
 export * from "./useDraggable";
 export * from "./useIsVideoPage";
+export * from "./useLocalStorage";
 export * from "./useMediaQuery";
 export * from "./useOutsideClick";
 export * from "./useRequest";

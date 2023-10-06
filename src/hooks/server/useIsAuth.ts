@@ -1,10 +1,10 @@
 import { cookies } from "next/headers";
 
-import { IS_AUTH_COOKIE_NAME } from "@/constants";
+import { COOKIE_IS_AUTH } from "@/constants";
 
 export const useIsAuth = (): boolean => {
     const cookieStore = cookies();
-    const value = cookieStore.get(IS_AUTH_COOKIE_NAME)?.value;
+    const value = cookieStore.get(COOKIE_IS_AUTH)?.value;
 
     if (value) {
         return JSON.parse(value) as boolean;

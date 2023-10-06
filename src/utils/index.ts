@@ -6,3 +6,7 @@ export * from "./formatVideoDuration";
 export * from "./formatVideoLikes";
 export * from "./formatVideoViews";
 export * from "./theme";
+
+import { LocalStorage } from "./localStorage";
+
+export const localStorage = new LocalStorage();
