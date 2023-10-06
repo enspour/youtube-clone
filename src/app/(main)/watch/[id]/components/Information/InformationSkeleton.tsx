@@ -16,8 +16,8 @@ const InformationSkeleton: FC = () => {
                     <UserAvatarSkeleton diameter="4rem" />
 
                     <div className="flex flex-col justify-center mr-2">
-                        <Skeleton type="text" width="6rem" fontSize="1.6rem" />
-                        <Skeleton type="text" width="4rem" fontSize="1.4rem" />
+                        <Skeleton type="text" width="10rem" fontSize="1.6rem" />
+                        <Skeleton type="text" width="8rem" fontSize="1.4rem" />
                     </div>
 
                     <Skeleton

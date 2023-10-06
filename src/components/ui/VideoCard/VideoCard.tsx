@@ -1,5 +1,7 @@
-import Link from "next/link";
-import { CSSProperties, FC, memo } from "react";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { CSSProperties, FC, MouseEvent, memo } from "react";
 
 import VideoCardInfo from "./VideoCardInfo";
 import VideoCardPreview from "./VideoCardPreview";
@@ -23,15 +25,22 @@ const VideoCard: FC<VideoCardProps> = ({
     direction = "vertical",
     palette = "primary",
 }) => {
+    const router = useRouter();
+
+    const open = (e: MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation();
+        router.push(`/watch/${video.id}`);
+    };
+
     return (
-        <Link
-            href={`/watch/${video.id}`}
+        <div
             className={styles.video}
             style={getStyle(direction, palette)}
+            onClick={open}
         >
             <VideoCardPreview video={video} />
             <VideoCardInfo video={video} direction={direction} />
-        </Link>
+        </div>
     );
 };
 

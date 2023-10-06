@@ -6,9 +6,9 @@ import FilledDoubleButton, {
     FilledDoubleButtonProps,
 } from "./FilledDoubleButton/FilledDoubleButton";
 
-import FilledRoundedButton, {
-    FilledRoundedButtonProps,
-} from "./FilledRoundedButton/FilledRoundedButton";
+import FilledCircleButton, {
+    FilledCircleButtonProps,
+} from "./FilledCircleButton/FilledCircleButton";
 
 import OutlinedButton, {
     OutlinedButtonProps,
@@ -17,7 +17,7 @@ import OutlinedButton, {
 type ButtonProps =
     | FilledButtonProps
     | FilledDoubleButtonProps
-    | FilledRoundedButtonProps
+    | FilledCircleButtonProps
     | OutlinedButtonProps;
 
 const Button: FC<ButtonProps> = (props) => {
@@ -28,8 +28,8 @@ const Button: FC<ButtonProps> = (props) => {
             return <FilledButton {...props} />;
         case "filled double":
             return <FilledDoubleButton {...props} />;
-        case "filled rounded":
-            return <FilledRoundedButton {...props} />;
+        case "filled circle":
+            return <FilledCircleButton {...props} />;
         case "outlined":
             return <OutlinedButton {...props} />;
     }

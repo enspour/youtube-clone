@@ -14,7 +14,7 @@ const HeaderNotification: FC = () => {
     return (
         <Popper type="right">
             <PopperToggle>
-                <Button type="filled rounded" diameter="4rem">
+                <Button type="filled circle" diameter="4rem">
                     <Icon svg={NotificationIcon} cursor="pointer" />
                 </Button>
             </PopperToggle>

@@ -2,21 +2,21 @@
 
 import { FC, MouseEvent, ReactNode } from "react";
 
-import { ThemePalette } from "@/interfaces";
+import { RemUnits, ThemePalette } from "@/interfaces";
 
 import { getThemeColors } from "@/utils";
 
-import styles from "./FilledRoundedButton.module.scss";
+import styles from "./FilledCircleButton.module.scss";
 
-export interface FilledRoundedButtonProps {
-    type: "filled rounded";
+export interface FilledCircleButtonProps {
+    type: "filled circle";
     children: ReactNode | ReactNode[];
-    diameter?: `${number}rem`;
+    diameter?: RemUnits;
     onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
     palette?: ThemePalette;
 }
 
-const FilledRoundedButton: FC<FilledRoundedButtonProps> = ({
+const FilledCircleButton: FC<FilledCircleButtonProps> = ({
     children,
     diameter = "3.6rem",
     onClick,
@@ -33,10 +33,10 @@ const FilledRoundedButton: FC<FilledRoundedButtonProps> = ({
     );
 };
 
-const getStyle = (diameter: `${number}rem`, palette: ThemePalette) => ({
+const getStyle = (diameter: RemUnits, palette: ThemePalette) => ({
     width: diameter,
     height: diameter,
     ...getThemeColors(["bg", "bg-hover", "color"], palette),
 });
 
-export default FilledRoundedButton;
+export default FilledCircleButton;

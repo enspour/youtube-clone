@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CSSProperties, FC, MouseEvent, memo } from "react";
 
-import { User } from "@/interfaces";
+import { RemUnits, User } from "@/interfaces";
 
 import { convertRemToPx } from "@/utils";
 
@@ -12,7 +12,7 @@ import styles from "./UserAvatar.module.scss";
 
 interface UserAvatarProps {
     user: User;
-    diameter: `${number}rem`;
+    diameter: RemUnits;
 }
 
 const UserAvatar: FC<UserAvatarProps> = ({ user, diameter }) => {
@@ -32,14 +32,14 @@ const UserAvatar: FC<UserAvatarProps> = ({ user, diameter }) => {
             <Image
                 src={user.avatar}
                 alt="avatar"
-                width={convertRemToPx(diameter)}
-                height={convertRemToPx(diameter)}
+                width={parseFloat(convertRemToPx(diameter))}
+                height={parseFloat(convertRemToPx(diameter))}
             />
         </div>
     );
 };
 
-const getStyles = (diameter: `${number}rem`): CSSProperties => ({
+const getStyles = (diameter: RemUnits): CSSProperties => ({
     width: diameter,
     minWidth: diameter,
     height: diameter,

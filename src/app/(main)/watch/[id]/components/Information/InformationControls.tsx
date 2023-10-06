@@ -52,7 +52,7 @@ const InformationControls: FC<InformationControlsProps> = ({ video }) => {
 
             <Popper type="right">
                 <PopperToggle>
-                    <Button type="filled rounded" palette="secondary">
+                    <Button type="filled circle" palette="secondary">
                         <Icon
                             svg={MoreIcon}
                             cursor="pointer"

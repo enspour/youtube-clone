@@ -2,8 +2,12 @@
 
 import { CSSProperties, FC, ReactNode, memo, useId } from "react";
 
+import { PxUnits, RemUnits, isPxUnits, isRemUnits } from "@/interfaces";
+
+import { convertRemToPx } from "@/utils";
+
 type ContainerQueryConditional = "less than" | "more than";
-type ContainerQueryWidth = `${number}px`;
+type ContainerQueryWidth = RemUnits | PxUnits;
 type ContainerQuerySize = `${ContainerQueryConditional} ${ContainerQueryWidth}`;
 
 const parseContainerQuerySize = (size: ContainerQuerySize) => {
@@ -12,7 +16,15 @@ const parseContainerQuerySize = (size: ContainerQuerySize) => {
         ContainerQueryWidth
     ];
 
-    return { type, width };
+    if (isPxUnits(width)) {
+        return { type, width };
+    }
+
+    if (isRemUnits(width)) {
+        return { type, width: convertRemToPx(width) };
+    }
+
+    throw new Error("Incorrect width!");
 };
 
 interface ContainerQueryProps {

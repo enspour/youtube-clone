@@ -11,6 +11,8 @@ import {
 
 import { useOutsideClick } from "@/hooks/client";
 
+import { RemUnits } from "@/interfaces";
+
 interface PopperContext {
     isOpen: boolean;
     open: () => void;
@@ -28,7 +30,7 @@ const initialPopperContext: PopperContext = {
 const Popper = createContext<PopperContext>(initialPopperContext);
 
 export type PopperStyleType = "left" | "right" | "center";
-export type PopperStyleGap = `${number}rem`;
+export type PopperStyleGap = RemUnits;
 
 interface PopperStyleContext {
     type: PopperStyleType;
