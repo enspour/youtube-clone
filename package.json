@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "generate": "bash ./scripts/generate.sh"
     },
     "dependencies": {
         "@types/node": "20.6.2",
@@ -24,6 +25,7 @@
     "devDependencies": {
         "@svgr/webpack": "^8.1.0",
         "@types/js-cookie": "^3.0.4",
-        "sass": "^1.67.0"
+        "sass": "^1.67.0",
+        "uuid": "^9.0.1"
     }
 }

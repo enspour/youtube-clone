@@ -1,5 +1,5 @@
 export interface User {
-    id: string;
+    id: number;
     name: string;
     avatar: string;
     followings: number;
@@ -7,7 +7,7 @@ export interface User {
 }
 
 export const getDefaultUser = (): User => ({
-    id: "",
+    id: -1,
     name: "",
     avatar: "",
     followings: 0,

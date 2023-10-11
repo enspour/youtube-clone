@@ -1,4 +1,4 @@
-import { getUser } from "@/server-actions/users";
+import { fetchUser } from "@/server-actions/users";
 
 interface PageProps {
     params: { id: string };
@@ -7,7 +7,7 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
     const { id } = params;
 
-    const user = await getUser(id);
+    const user = await fetchUser(parseInt(id));
 
     return <div>{JSON.stringify(user, null, 4)}</div>;
 }

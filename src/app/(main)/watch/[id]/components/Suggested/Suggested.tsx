@@ -3,7 +3,7 @@ import { memo } from "react";
 import { HorizontalListVideos } from "@/components/ui/HorizontalListVideos";
 import { VerticalListVideos } from "@/components/ui/VerticalListVideos";
 
-import { getSuggestedVideos } from "@/server-actions/videos";
+import { fetchSuggestedVideos } from "@/server-actions/videos";
 
 import { Video } from "@/interfaces";
 
@@ -14,7 +14,7 @@ interface SuggestedProps {
 }
 
 const Suggested = async ({ video }: SuggestedProps) => {
-    const videos = await getSuggestedVideos(video.id, 0, 10);
+    const videos = await fetchSuggestedVideos(video.id, 0, 10);
 
     return (
         <div className={styles.suggested}>
