@@ -4,9 +4,7 @@ export * from "./formatUserFollowings";
 export * from "./formatVideoCreatedAt";
 export * from "./formatVideoDuration";
 export * from "./formatVideoLikes";
+export * from "./formatVideoTime";
 export * from "./formatVideoViews";
+export * from "./localStore";
 export * from "./theme";
-
-import { LocalStorage } from "./localStorage";
-
-export const localStorage = new LocalStorage();

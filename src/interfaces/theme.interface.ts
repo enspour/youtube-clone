@@ -24,6 +24,10 @@ export const themeProperties = [
     "skeleton-bg",
     "skeleton-shine",
     "icon",
+    "range-bg",
+    "range-color",
+    "track-bg",
+    "track-color",
 ] as const;
 
 export type ThemeProperty = (typeof themeProperties)[number];

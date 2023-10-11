@@ -3,3 +3,7 @@
     height: 100%;
     object-fit: contain;
 }
+
+.video::-webkit-media-controls {
+    display: none !important;
+}

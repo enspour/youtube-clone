@@ -8,6 +8,10 @@
     "--theme-primary-skeleton-bg": "#888888",
     "--theme-primary-skeleton-shine": "#6E6E6E",
     "--theme-primary-icon": "#E4F1F1",
+    "--theme-primary-range-bg": "#717171",
+    "--theme-primary-range-color": "#E4F1F1",
+    "--theme-primary-track-bg": "#B3B3B333",
+    "--theme-primary-track-color": "#ff0000",
 
     "--theme-secondary-bg": "#282828",
     "--theme-secondary-bg-extra": "#515151",
@@ -17,5 +21,9 @@
     "--theme-secondary-border": "#4C4C4C",
     "--theme-secondary-skeleton-bg": "#888888",
     "--theme-secondary-skeleton-shine": "#6E6E6E",
-    "--theme-secondary-icon": "#B3B3B3"
+    "--theme-secondary-icon": "#B3B3B3",
+    "--theme-secondary-range-bg": "#717171",
+    "--theme-secondary-range-color": "#E4F1F1",
+    "--theme-secondary-track-bg": "#59595999",
+    "--theme-secondary-track-color": "#ff0000"
 }

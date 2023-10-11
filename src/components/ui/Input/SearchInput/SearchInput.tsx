@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, FC, FocusEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, FC, FocusEvent, MouseEvent } from "react";
 
 import { Icon } from "../../Icon";
 
@@ -14,26 +14,28 @@ import styles from "./SearchInput.module.scss";
 
 export interface SearchInputProps {
     type: "search";
-    onSearch: (text: string, e: MouseEvent<HTMLButtonElement>) => void;
+    text: string;
+    setText: (text: string) => void;
+    onSearch: (e: MouseEvent<HTMLButtonElement>) => void;
     onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     placeholder?: string;
     palette?: ThemePalette;
 }
 
 const SearchInput: FC<SearchInputProps> = ({
+    text,
+    setText,
     onSearch,
     onFocus,
     placeholder,
     palette = "primary",
 }) => {
-    const [text, setText] = useState("");
-
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);
     };
 
     const clickHandler = (e: MouseEvent<HTMLButtonElement>) => {
-        onSearch(text, e);
+        onSearch(e);
     };
 
     return (

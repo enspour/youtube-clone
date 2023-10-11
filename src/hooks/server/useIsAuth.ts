@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-import { COOKIE_IS_AUTH } from "@/constants";
+import { COOKIE_DEFAULT_VALUES, COOKIE_IS_AUTH } from "@/constants";
 
 export const useIsAuth = (): boolean => {
     const cookieStore = cookies();
@@ -10,5 +10,5 @@ export const useIsAuth = (): boolean => {
         return JSON.parse(value) as boolean;
     }
 
-    return false;
+    return COOKIE_DEFAULT_VALUES[COOKIE_IS_AUTH];
 };

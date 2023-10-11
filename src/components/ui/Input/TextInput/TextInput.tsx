@@ -1,6 +1,4 @@
-"use client";
-
-import { ChangeEvent, FC, FocusEvent, useState } from "react";
+import { ChangeEvent, FC, FocusEvent } from "react";
 
 import { ThemePalette } from "@/interfaces";
 
@@ -10,18 +8,20 @@ import styles from "./TextInput.module.scss";
 
 export interface TextInputProps {
     type: "text";
+    text: string;
+    setText: (text: string) => void;
     onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
     placeholder?: string;
     palette?: ThemePalette;
 }
 
 const TextInput: FC<TextInputProps> = ({
+    text,
+    setText,
     onFocus,
     placeholder,
     palette = "primary",
 }) => {
-    const [text, setText] = useState("");
-
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);
     };

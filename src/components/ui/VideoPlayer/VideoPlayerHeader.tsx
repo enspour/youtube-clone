@@ -1,28 +1,19 @@
-"use client";
+import { FC, RefObject } from "react";
 
-import { useRouter } from "next/navigation";
-import { FC, MouseEvent } from "react";
-
-import { useVideoPlayerStore } from "@/stores";
+import VideoPlayerMinimize from "./controls/VideoPlayerMinimize";
 
 import styles from "./VideoPlayer.module.scss";
 
-const VideoPlayerHeader: FC = () => {
-    const router = useRouter();
+interface VideoPlayerHeaderProps {
+    playerRef: RefObject<HTMLDivElement>;
+}
 
-    const minimize = useVideoPlayerStore((state) => state.minimize);
-
-    const open = (e: MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-
-        minimize();
-
-        router.push("/");
-    };
-
+const VideoPlayerHeader: FC<VideoPlayerHeaderProps> = ({ playerRef }) => {
     return (
         <div className={styles.header}>
-            <button onClick={open}>open</button>
+            <div className="flex justify-between items-center px-1">
+                <VideoPlayerMinimize />
+            </div>
         </div>
     );
 };

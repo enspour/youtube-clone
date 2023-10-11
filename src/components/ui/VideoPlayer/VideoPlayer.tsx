@@ -1,7 +1,8 @@
 "use client";
 
-import { FC, memo } from "react";
+import { FC, memo, useRef } from "react";
 
+import VideoPlayerFooter from "./VideoPlayerFooter";
 import VideoPlayerHeader from "./VideoPlayerHeader";
 
 import { useVideoElement } from "@/hooks/client";
@@ -13,11 +14,14 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer: FC<VideoPlayerProps> = ({ id }) => {
+    const playerRef = useRef(null);
+
     useVideoElement(id);
 
     return (
-        <div id={id} className={styles.player}>
-            <VideoPlayerHeader />
+        <div id={id} ref={playerRef} className={styles.player}>
+            <VideoPlayerHeader playerRef={playerRef} />
+            <VideoPlayerFooter playerRef={playerRef} />
         </div>
     );
 };
