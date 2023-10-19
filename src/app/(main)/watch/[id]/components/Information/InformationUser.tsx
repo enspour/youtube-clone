@@ -7,7 +7,7 @@ import { UserAvatarSkeleton } from "@/components/ui/UserAvatar";
 
 import { Video } from "@/interfaces";
 
-import { formatUserFollowings } from "@/utils";
+import { formatUserSubscriptions } from "@/utils";
 
 import styles from "./Information.module.scss";
 
@@ -27,8 +27,8 @@ const InformationUser: FC<InformationUserProps> = ({ video }) => {
                     {video.owner.name}
                 </div>
 
-                <div className={styles.info__user__followings}>
-                    {formatUserFollowings(video.owner.followings)}
+                <div className={styles.info__user__subscriptions}>
+                    {formatUserSubscriptions(video.owner.subscriptions)}
                 </div>
             </div>
 

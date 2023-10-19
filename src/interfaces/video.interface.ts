@@ -1,6 +1,6 @@
 import { User, getDefaultUser } from "./user.interface";
 
-export type VideoOwner = Pick<User, "id" | "name" | "followings">;
+export type VideoOwner = Pick<User, "id" | "name" | "subscriptions">;
 
 export interface Video {
     id: string;

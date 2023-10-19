@@ -15,7 +15,7 @@ const { generate, id, index, words, now, rand } = require("./generation");
             id: index(1),
             name: words(3),
             avatar: "/user_avatar.png",
-            followings: rand(100, 999),
+            subscriptions: rand(100, 10_000_00),
             createdAt: now(),
         };
 
@@ -31,8 +31,8 @@ const { generate, id, index, words, now, rand } = require("./generation");
             preview: "/video_preview.png",
             url: "/video.mp4",
             duration: rand(100, 999),
-            likes: rand(100, 999),
-            views: rand(100, 999),
+            likes: rand(100, 1_000_000),
+            views: rand(100, 100_000_000),
             createdAt: now(),
             owner: () => users[rand(0, users.length)()],
         };

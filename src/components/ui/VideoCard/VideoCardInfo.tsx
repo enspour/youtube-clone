@@ -29,7 +29,7 @@ const VideoCardInfo: FC<VideoCardInfoProps> = ({ video, direction }) => {
 
                 <div className={styles.info__stats}>
                     <span>{formatVideoViews(video.views)}</span>
-                    <span> | </span>
+                    <span> &#160;&#x25CF;&#160; </span>
                     <span>{formatVideoCreatedAt(video.createdAt)}</span>
                 </div>
             </div>
