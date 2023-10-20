@@ -38,4 +38,4 @@ next-env.d.ts
 public
 
 # generated data
-data
+data/generated

@@ -4,10 +4,10 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "dev:prepare": "bash ./scripts/prepare.sh",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "generate": "bash ./scripts/generate.sh"
+        "lint": "next lint"
     },
     "dependencies": {
         "@types/node": "20.6.2",

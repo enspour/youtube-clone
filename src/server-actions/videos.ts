@@ -1,4 +1,4 @@
-import videos from "../../data/videos.json";
+import videos from "../../data/generated/videos.json";
 
 import { Video } from "@/interfaces";
 

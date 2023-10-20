@@ -1,4 +1,4 @@
-import users from "../../data/users.json";
+import users from "../../data/generated/users.json";
 
 let delay = 0;
 
