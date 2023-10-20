@@ -1,11 +1,11 @@
 import { Suspense } from "react";
 
-import { fetchVideo } from "@/server-actions/videos";
-
 import { Comments } from "./components/Comments";
 import { Information } from "./components/Information";
 import { Player } from "./components/Player";
 import { Suggested, SuggestedSkeleton } from "./components/Suggested";
+
+import { VideosApi } from "@/api";
 
 import styles from "./page.module.scss";
 
@@ -16,7 +16,7 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
     const { id } = params;
 
-    const video = await fetchVideo(id);
+    const video = await VideosApi.fetchOne(id);
 
     return (
         <div className={styles.container}>
