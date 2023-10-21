@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { InfinitySlider } from "../InfinitySlider";
+import { InfinitySlider } from "@/components/utils/InfinitySlider";
 
 import { useIndex, usePreparedSlides } from "./MenuSliderProvider";
 

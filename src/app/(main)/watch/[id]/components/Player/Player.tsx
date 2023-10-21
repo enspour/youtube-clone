@@ -1,9 +1,10 @@
 "use client";
 
-import { FC, memo } from "react";
+import { FC, memo, useEffect } from "react";
 
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
-import PlayerSetup from "./PlayerSetup";
+
+import { useVideoPlayerStore } from "@/stores";
 
 import { Video } from "@/interfaces";
 
@@ -14,11 +15,15 @@ interface PlayerProps {
 }
 
 const Player: FC<PlayerProps> = ({ video }) => {
+    const setVideo = useVideoPlayerStore((state) => state.setVideo);
+
+    useEffect(() => {
+        setVideo(video);
+    }, [video]);
+
     return (
         <div className={styles.player}>
-            <PlayerSetup video={video}>
-                <VideoPlayer id="video-player" />
-            </PlayerSetup>
+            <VideoPlayer id="video-player" />
         </div>
     );
 };

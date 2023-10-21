@@ -1,14 +1,15 @@
 import { FC, memo } from "react";
 
-import { VideoCardSkeleton } from "../VideoCard";
+import { VideoCardSkeleton } from "../../VideoCard";
 
-import styles from "./VerticalListVideos.module.scss";
+import styles from "./VerticalVideoList.module.scss";
 
-interface VerticalListVideosSkeletonProps {
+export interface VerticalVideoListSkeletonProps {
+    type: "vertical";
     count: number;
 }
 
-const VerticalListVideosSkeleton: FC<VerticalListVideosSkeletonProps> = ({
+const VerticalVideoListSkeleton: FC<VerticalVideoListSkeletonProps> = ({
     count,
 }) => {
     const indexes = [...new Array(count)].map((_, index) => index);
@@ -22,4 +23,4 @@ const VerticalListVideosSkeleton: FC<VerticalListVideosSkeletonProps> = ({
     );
 };
 
-export default memo(VerticalListVideosSkeleton);
+export default memo(VerticalVideoListSkeleton);

@@ -1,7 +1,6 @@
 import { memo } from "react";
 
-import { HorizontalListVideos } from "@/components/ui/HorizontalListVideos";
-import { VerticalListVideos } from "@/components/ui/VerticalListVideos";
+import { VideoList } from "@/components/ui/VideoList";
 
 import { VideosApi } from "@/api";
 
@@ -19,11 +18,11 @@ const Suggested = async ({ video }: SuggestedProps) => {
     return (
         <div className={styles.suggested}>
             <div className={styles.suggested__vertical}>
-                <VerticalListVideos videos={videos} />
+                <VideoList type="vertical" videos={videos} />
             </div>
 
             <div className={styles.suggested__horizontal}>
-                <HorizontalListVideos videos={videos} />
+                <VideoList type="horizontal" videos={videos} />
             </div>
         </div>
     );

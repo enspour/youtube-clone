@@ -1,16 +1,17 @@
 import { FC, memo } from "react";
 
-import { VideoCard } from "../VideoCard";
+import { VideoCard } from "../../VideoCard";
 
 import { Video } from "@/interfaces";
 
-import styles from "./VerticalListVideos.module.scss";
+import styles from "./VerticalVideoList.module.scss";
 
-interface VerticalListVideosProps {
+export interface VerticalVideoListProps {
+    type: "vertical";
     videos: Video[];
 }
 
-const VerticalListVideos: FC<VerticalListVideosProps> = ({ videos }) => {
+const VerticalVideoList: FC<VerticalVideoListProps> = ({ videos }) => {
     return (
         <div className={styles.videos}>
             {videos.map((video) => (
@@ -24,4 +25,4 @@ const VerticalListVideos: FC<VerticalListVideosProps> = ({ videos }) => {
     );
 };
 
-export default memo(VerticalListVideos);
+export default memo(VerticalVideoList);

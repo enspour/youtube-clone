@@ -1,7 +1,6 @@
 import { FC, memo } from "react";
 
-import { HorizontalListVideosSkeleton } from "@/components/ui/HorizontalListVideos";
-import { VerticalListVideosSkeleton } from "@/components/ui/VerticalListVideos";
+import { VideoListSkeleton } from "@/components/ui/VideoList";
 
 import styles from "./Suggested.module.scss";
 
@@ -9,11 +8,11 @@ const SuggestedSkeleton: FC = () => {
     return (
         <div className={styles.suggested}>
             <div className={styles.suggested__vertical}>
-                <VerticalListVideosSkeleton count={10} />
+                <VideoListSkeleton type="vertical" count={10} />
             </div>
 
             <div className={styles.suggested__horizontal}>
-                <HorizontalListVideosSkeleton count={10} />
+                <VideoListSkeleton type="horizontal" count={10} />
             </div>
         </div>
     );

@@ -1,16 +1,17 @@
 import { FC, memo } from "react";
 
-import { VideoCard } from "../VideoCard";
+import { VideoCard } from "../../VideoCard";
 
 import { Video } from "@/interfaces";
 
-import styles from "./HorizontalListVideos.module.scss";
+import styles from "./HorizontalVideoList.module.scss";
 
-interface HorizontalListVideosProps {
+export interface HorizontalVideoListProps {
+    type: "horizontal";
     videos: Video[];
 }
 
-const HorizontalListVideos: FC<HorizontalListVideosProps> = ({ videos }) => {
+const HorizontalVideoList: FC<HorizontalVideoListProps> = ({ videos }) => {
     return (
         <div className={styles.videos}>
             {videos.map((video) => (
@@ -20,4 +21,4 @@ const HorizontalListVideos: FC<HorizontalListVideosProps> = ({ videos }) => {
     );
 };
 
-export default memo(HorizontalListVideos);
+export default memo(HorizontalVideoList);
