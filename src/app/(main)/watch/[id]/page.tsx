@@ -5,7 +5,9 @@ import { Information } from "./components/Information";
 import { Player } from "./components/Player";
 import { Suggested, SuggestedSkeleton } from "./components/Suggested";
 
-import { VideosApi } from "@/api";
+import { videosApi } from "@/api";
+
+import { isSuccessResponse } from "@/interfaces";
 
 import styles from "./page.module.scss";
 
@@ -16,22 +18,30 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
     const { id } = params;
 
-    const video = await VideosApi.fetchOne(id);
+    const response = await videosApi.fetchOne(id);
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.layout}>
-                <Player video={video} />
+    if (isSuccessResponse(response)) {
+        const { data } = response;
 
-                <div className={styles.main}>
-                    <Information video={video} />
-                    <Comments video={video} />
+        if (!data) {
+            return null;
+        }
+
+        return (
+            <div className={styles.container}>
+                <div className={styles.layout}>
+                    <Player video={data} />
+
+                    <div className={styles.main}>
+                        <Information video={data} />
+                        <Comments video={data} />
+                    </div>
+
+                    <Suspense fallback={<SuggestedSkeleton />}>
+                        <Suggested video={data} />
+                    </Suspense>
                 </div>
-
-                <Suspense fallback={<SuggestedSkeleton />}>
-                    <Suggested video={video} />
-                </Suspense>
             </div>
-        </div>
-    );
+        );
+    }
 }

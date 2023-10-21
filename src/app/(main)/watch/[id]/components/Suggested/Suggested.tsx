@@ -2,9 +2,9 @@ import { memo } from "react";
 
 import { VideoList } from "@/components/ui/VideoList";
 
-import { VideosApi } from "@/api";
+import { videosApi } from "@/api";
 
-import { Video } from "@/interfaces";
+import { Video, isSuccessResponse } from "@/interfaces";
 
 import styles from "./Suggested.module.scss";
 
@@ -13,19 +13,25 @@ interface SuggestedProps {
 }
 
 const Suggested = async ({ video }: SuggestedProps) => {
-    const videos = await VideosApi.fetchSuggestionsById(video.id, 0, 10);
+    const response = await videosApi.fetchSuggestionsById(video.id, 0, 10);
 
-    return (
-        <div className={styles.suggested}>
-            <div className={styles.suggested__vertical}>
-                <VideoList type="vertical" videos={videos} />
-            </div>
+    if (isSuccessResponse(response)) {
+        const { data } = response;
 
-            <div className={styles.suggested__horizontal}>
-                <VideoList type="horizontal" videos={videos} />
+        return (
+            <div className={styles.suggested}>
+                <div className={styles.suggested__vertical}>
+                    <VideoList type="vertical" videos={data} />
+                </div>
+
+                <div className={styles.suggested__horizontal}>
+                    <VideoList type="horizontal" videos={data} />
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+    return null;
 };
 
 export default memo(Suggested);

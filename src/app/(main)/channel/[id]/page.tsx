@@ -1,4 +1,6 @@
-import { UsersApi } from "@/api";
+import { usersApi } from "@/api";
+
+import { isSuccessResponse } from "@/interfaces";
 
 interface PageProps {
     params: { id: string };
@@ -7,7 +9,13 @@ interface PageProps {
 export default async function Page({ params }: PageProps) {
     const { id } = params;
 
-    const user = await UsersApi.fetchOne(parseInt(id));
+    const response = await usersApi.fetchOne(parseInt(id));
 
-    return <div>{JSON.stringify(user, null, 4)}</div>;
+    if (isSuccessResponse(response)) {
+        const { data } = response;
+
+        return <div>{JSON.stringify(data, null, 4)}</div>;
+    }
+
+    return null;
 }
