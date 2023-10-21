@@ -9,7 +9,7 @@ const { generate, id, index, words, now, rand } = require("./generation");
     const dirname = args["--dirname"];
 
     const generateUsers = () => {
-        const count = 10;
+        const count = 100;
 
         const schema = {
             id: index(1),
@@ -23,7 +23,7 @@ const { generate, id, index, words, now, rand } = require("./generation");
     };
 
     const generateVideos = (users) => {
-        const count = 100;
+        const count = 600;
 
         const schema = {
             id: id(),

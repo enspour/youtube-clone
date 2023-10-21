@@ -1,4 +1,3 @@
-import VideoGallery from "./VideoGallery";
-import VideoGallerySkeleton from "./VideoGallerySkeleton";
-
-export { VideoGallery, VideoGallerySkeleton };
+export { default as VideoGallery } from "./VideoGallery";
+export { default as VideoGallerySkeleton } from "./VideoGallerySkeleton";
+export { default as VideoGalleryWithSkeleton } from "./VideoGalleryWithSkeleton";
