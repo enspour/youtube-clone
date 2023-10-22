@@ -1,9 +1,6 @@
-import { Suspense } from "react";
-
-import { Comments } from "./components/Comments";
-import { Information } from "./components/Information";
+import { Main } from "./components/Main";
 import { Player } from "./components/Player";
-import { Suggested, SuggestedSkeleton } from "./components/Suggested";
+import { Sidebar } from "./components/Sidebar";
 
 import { videosApi } from "@/api";
 
@@ -20,28 +17,19 @@ export default async function Page({ params }: PageProps) {
 
     const response = await videosApi.fetchOne(id);
 
-    if (isSuccessResponse(response)) {
-        const { data } = response;
-
-        if (!data) {
-            return null;
-        }
-
-        return (
-            <div className={styles.container}>
-                <div className={styles.layout}>
-                    <Player video={data} />
-
-                    <div className={styles.main}>
-                        <Information video={data} />
-                        <Comments video={data} />
-                    </div>
-
-                    <Suspense fallback={<SuggestedSkeleton />}>
-                        <Suggested video={data} />
-                    </Suspense>
-                </div>
-            </div>
-        );
+    if (!isSuccessResponse(response)) {
+        return null;
     }
+
+    const { data } = response;
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.layout}>
+                <Player video={data} />
+                <Main video={data} />
+                <Sidebar video={data} />
+            </div>
+        </div>
+    );
 }

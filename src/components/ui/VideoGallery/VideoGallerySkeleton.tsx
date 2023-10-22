@@ -5,17 +5,17 @@ import { VideoCardSkeleton } from "../VideoCard";
 import styles from "./VideoGallery.module.scss";
 
 interface VideoGallerySkeletonProps {
-    count: number;
+    skeleton: number;
 }
 
-const VideoGallerySkeleton: FC<VideoGallerySkeletonProps> = ({ count }) => {
-    const indexes = [...new Array(count)].map((_, index) => index);
+const VideoGallerySkeleton: FC<VideoGallerySkeletonProps> = ({ skeleton }) => {
+    const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
         <div className={styles.container}>
             <div className={styles.videos}>
-                {indexes.map((index) => (
-                    <VideoCardSkeleton key={index} />
+                {skeletons.map((skeleton) => (
+                    <VideoCardSkeleton key={skeleton} />
                 ))}
             </div>
         </div>

@@ -5,7 +5,7 @@ import {
     errorHttpStatusCodes,
     networkErrorHttpStatusCodes,
     successHttpStatusCode,
-} from ".";
+} from "..";
 
 export interface NetworkErrorResponse {
     statusCode: NetworkErrorHttpStatusCode;

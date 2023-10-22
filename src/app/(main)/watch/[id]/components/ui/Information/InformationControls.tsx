@@ -38,13 +38,13 @@ const InformationControls: FC<InformationControlsProps> = ({ video }) => {
                 palette="secondary"
             />
 
-            <ContainerQuery size="less than 700px" style={{ display: "none" }}>
+            <ContainerQuery size="less than 800px" style={{ display: "none" }}>
                 <Button type="filled" onClick={share} palette="secondary">
                     Share
                 </Button>
             </ContainerQuery>
 
-            <ContainerQuery size="less than 800px" style={{ display: "none" }}>
+            <ContainerQuery size="less than 900px" style={{ display: "none" }}>
                 <Button type="filled" onClick={save} palette="secondary">
                     Save
                 </Button>

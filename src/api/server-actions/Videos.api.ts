@@ -11,7 +11,7 @@ export class VideosServerActionsApi implements VideosApi {
         return await fetchVideos(start, offset);
     }
 
-    async fetchSuggestionsById(id: string, start: number, offset: number) {
+    async fetchSuggestionsById(start: number, offset: number, id: string) {
         return await fetchVideos(start, offset);
     }
 }

@@ -17,14 +17,14 @@ const InformationControlsMore: FC = () => {
             <Menu palette="secondary">
                 <MenuGroup>
                     <ContainerQuery
-                        size="more than 700px"
+                        size="more than 800px"
                         style={{ display: "none" }}
                     >
                         <MenuButton onClick={share}>Share</MenuButton>
                     </ContainerQuery>
 
                     <ContainerQuery
-                        size="more than 800px"
+                        size="more than 900px"
                         style={{ display: "none" }}
                     >
                         <MenuButton onClick={save}>Save</MenuButton>

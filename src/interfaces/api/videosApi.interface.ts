@@ -1,7 +1,7 @@
-import { ApiResponse, Video } from ".";
+import { ApiResponse, Video } from "..";
 
 export interface VideosApi {
-    fetchOne(id: string): Promise<ApiResponse<Video | null>>;
+    fetchOne(id: string): Promise<ApiResponse<Video>>;
 
     fetchSuggestions(
         start: number,
@@ -9,8 +9,8 @@ export interface VideosApi {
     ): Promise<ApiResponse<Video[]>>;
 
     fetchSuggestionsById(
-        id: string,
         start: number,
-        offset: number
+        offset: number,
+        id: string
     ): Promise<ApiResponse<Video[]>>;
 }

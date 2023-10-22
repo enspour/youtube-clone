@@ -2,7 +2,7 @@ import videos from "../../data/generated/videos.json";
 
 import { ApiResponse, Video } from "@/interfaces";
 
-let delay = 2000;
+const delay = 2000;
 
 export async function fetchVideos(
     start: number,
@@ -20,11 +20,9 @@ export async function fetchVideos(
     });
 }
 
-export async function fetchVideo(
-    id: string
-): Promise<ApiResponse<Video | null>> {
+export async function fetchVideo(id: string): Promise<ApiResponse<Video>> {
     return new Promise((resolve) => {
-        const data = videos.find((video) => video.id === id) || null;
+        const data = videos.find((video) => video.id === id)!;
 
         const response = {
             statusCode: 200,

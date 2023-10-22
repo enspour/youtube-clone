@@ -5,21 +5,22 @@ import { useEffect } from "react";
 import {
     VideoGallery,
     VideoGallerySkeleton,
-    VideoGalleryWithSkeleton,
 } from "@/components/ui/VideoGallery";
 
-import { InfinityScroll } from "@/components/utils/InfinityScroll";
-
-import { useHomePageVideosStore } from "@/stores";
+import { useHomeVideosStore } from "@/stores";
 
 import styles from "./page.module.scss";
 
 export default function Page() {
-    const status = useHomePageVideosStore((state) => state.status);
-    const videos = useHomePageVideosStore((state) => state.videos);
-    const offset = useHomePageVideosStore((state) => state.offset);
+    const status = useHomeVideosStore((state) => state.status);
+    const videos = useHomeVideosStore((state) => state.items);
+    const offset = useHomeVideosStore((state) => state.offset);
 
-    const fetch = useHomePageVideosStore((state) => state.fetch);
+    const fetch = useHomeVideosStore((state) => state.fetch);
+
+    const onEnd = () => {
+        fetch();
+    };
 
     useEffect(() => {
         fetch();
@@ -27,15 +28,13 @@ export default function Page() {
 
     return (
         <div className={styles.gallery}>
-            <InfinityScroll fetchData={fetch}>
-                {status === "pending" && videos.length === 0 ? (
-                    <VideoGallerySkeleton count={offset} />
-                ) : status === "pending" ? (
-                    <VideoGalleryWithSkeleton videos={videos} count={offset} />
-                ) : (
-                    <VideoGallery videos={videos} />
-                )}
-            </InfinityScroll>
+            {videos.length === 0 ? (
+                <VideoGallerySkeleton skeleton={offset} />
+            ) : status === "pending" ? (
+                <VideoGallery videos={videos} skeleton={offset} />
+            ) : (
+                <VideoGallery videos={videos} onEnd={onEnd} />
+            )}
         </div>
     );
 }

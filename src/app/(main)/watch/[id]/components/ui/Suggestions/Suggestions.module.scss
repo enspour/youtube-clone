@@ -1,7 +1,4 @@
-.suggested {
-    padding: 1rem;
-    grid-area: suggested;
-
+.suggestions {
     &__vertical {
         display: block;
     }
@@ -13,7 +10,7 @@
 }
 
 @container layout (max-width: 1200px) {
-    .suggested {
+    .suggestions {
         &__vertical {
             display: none;
         }

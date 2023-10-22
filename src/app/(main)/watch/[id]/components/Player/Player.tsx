@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, memo, useEffect } from "react";
+import { FC, useEffect } from "react";
 
 import { VideoPlayer } from "@/components/ui/VideoPlayer";
 
@@ -28,4 +28,4 @@ const Player: FC<PlayerProps> = ({ video }) => {
     );
 };
 
-export default memo(Player);
+export default Player;

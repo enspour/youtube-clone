@@ -6,18 +6,18 @@ import styles from "./HorizontalVideoList.module.scss";
 
 export interface HorizontalVideoListSkeletonProps {
     type: "horizontal";
-    count: number;
+    skeleton: number;
 }
 
 const HorizontalVideoListSkeleton: FC<HorizontalVideoListSkeletonProps> = ({
-    count,
+    skeleton,
 }) => {
-    const indexes = [...new Array(count)].map((_, index) => index);
+    const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
         <div className={styles.videos}>
-            {indexes.map((index) => (
-                <VideoCardSkeleton key={index} />
+            {skeletons.map((skeleton) => (
+                <VideoCardSkeleton key={skeleton} />
             ))}
         </div>
     );

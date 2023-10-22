@@ -1,7 +1,6 @@
-import { CommentsSkeleton } from "./components/Comments";
-import { InformationSkeleton } from "./components/Information";
+import { MainSkeleton } from "./components/Main";
 import { PlayerSkeleton } from "./components/Player";
-import { SuggestedSkeleton } from "./components/Suggested";
+import { SidebarSkeleton } from "./components/Sidebar";
 
 import styles from "./page.module.scss";
 
@@ -10,13 +9,8 @@ export default function Loading() {
         <div className={styles.container}>
             <div className={styles.layout}>
                 <PlayerSkeleton />
-
-                <div className={styles.main}>
-                    <InformationSkeleton />
-                    <CommentsSkeleton />
-                </div>
-
-                <SuggestedSkeleton />
+                <MainSkeleton />
+                <SidebarSkeleton />
             </div>
         </div>
     );
