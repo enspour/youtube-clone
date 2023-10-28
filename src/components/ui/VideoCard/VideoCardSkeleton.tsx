@@ -14,7 +14,7 @@ const VideoCardSkeleton: FC<VideoCardSkeletonProps> = ({
     direction = "vertical",
 }) => {
     return (
-        <div className={styles.video} style={getVideoStyles(direction)}>
+        <div className={styles.container} style={getVideoStyles(direction)}>
             <div className={styles.preview}>
                 <Skeleton type="rectangle" width="40rem" height="22.5rem" />
             </div>

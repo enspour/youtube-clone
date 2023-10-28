@@ -29,11 +29,11 @@ const SidebarDynamic: FC<SidebarDynamicProps> = ({ normal }) => {
             ref={sidebarRef}
             className={classes(
                 styles.sidebar,
-                styles.sidebar__full,
+                styles["sidebar--full"],
                 styles.sidebar__dynamic,
                 isOpen
-                    ? styles.sidebar__dynamic__open
-                    : styles.sidebar__dynamic__close
+                    ? styles["sidebar__dynamic--open"]
+                    : styles["sidebar__dynamic--close"]
             )}
             style={getStyle(isVideoPage)}
         >

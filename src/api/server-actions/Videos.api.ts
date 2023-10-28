@@ -2,7 +2,7 @@ import { fetchVideo, fetchVideos } from "@/server-actions/videos";
 
 import { VideosApi } from "@/interfaces";
 
-export class VideosServerActionsApi implements VideosApi {
+export class ServerActionsVideosApi implements VideosApi {
     async fetchOne(id: string) {
         return await fetchVideo(id);
     }

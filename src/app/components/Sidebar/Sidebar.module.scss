@@ -11,21 +11,21 @@
     transition: width 0.2s, padding 0.2s;
 }
 
-.sidebar__full {
+.sidebar--full {
     width: 24rem;
     padding: 0.5rem 1rem;
 }
 
-.sidebar__mini {
+.sidebar--mini {
     width: 10rem;
     padding: 0.5rem 0;
+}
 
-    &__item {
-        width: 100%;
-        font-size: 1.2rem;
-        display: flex;
-        justify-content: center;
-    }
+.sidebar__item--mini {
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar__static {
@@ -38,15 +38,15 @@
     position: absolute;
     transition: left 0.1s;
 
-    &__open {
-        left: 0;
-    }
-
-    &__close {
-        left: -24rem;
-    }
-
     @media screen and (min-width: 1000px) {
         display: none;
     }
+}
+
+.sidebar__dynamic--open {
+    left: 0;
+}
+
+.sidebar__dynamic--close {
+    left: -24rem;
 }

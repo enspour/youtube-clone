@@ -1,4 +1,4 @@
-.button {
+.container {
     --bg: var(--theme-primary-bg);
     --bg-hover: var(--theme-primary-bg-hover);
     --color: var(--theme-primary-color);
@@ -12,15 +12,15 @@
     background-color: var(--bg);
     border-radius: 2rem;
     overflow: hidden;
-    transition: 0.2s;
+}
 
-    & button {
-        height: 3.6rem;
-        padding: 0 2.4rem;
+.button {
+    height: 3.6rem;
+    padding: 0 2.4rem;
+    transition: background-color 0.2s;
 
-        &:hover {
-            background-color: var(--bg-hover);
-        }
+    &:hover {
+        background-color: var(--bg-hover);
     }
 }
 

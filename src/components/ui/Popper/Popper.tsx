@@ -20,7 +20,7 @@ const Popper: FC<PopperProps> = ({ children, type = "left", gap = "1rem" }) => {
 
     return (
         <PopperProvider popperRef={popperRef} type={type} gap={gap}>
-            <div ref={popperRef} className={styles.popper}>
+            <div ref={popperRef} className={styles.container}>
                 {children}
             </div>
         </PopperProvider>

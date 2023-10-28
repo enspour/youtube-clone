@@ -1,4 +1,4 @@
-.video {
+.container {
     --color: var(--theme-primary-color);
     --color-extra: var(--theme-primary-color-extra);
 
@@ -15,21 +15,23 @@
     min-width: 20rem;
     display: flex;
     gap: 0.8rem;
+}
 
-    &__name {
-        font-weight: 500;
-        font-size: 1.8rem;
-        color: var(--color);
-    }
+.info__name {
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--color);
+}
 
-    &__username,
-    &__stats {
-        margin-top: 0.4rem;
-        font-size: 1.4rem;
-        color: var(--color-extra);
-    }
+.info__username,
+.info__stats {
+    margin-top: 0.4rem;
+    font-size: 1.4rem;
+    color: var(--color-extra);
+}
 
-    &__username:hover {
+.info__username {
+    &:hover {
         color: var(--color);
     }
 }

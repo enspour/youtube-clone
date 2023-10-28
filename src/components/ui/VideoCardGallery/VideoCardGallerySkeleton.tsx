@@ -2,18 +2,20 @@ import { FC, memo } from "react";
 
 import { VideoCardSkeleton } from "../VideoCard";
 
-import styles from "./VideoGallery.module.scss";
+import styles from "./VideoCardGallery.module.scss";
 
-interface VideoGallerySkeletonProps {
+interface VideoCardGallerySkeletonProps {
     skeleton: number;
 }
 
-const VideoGallerySkeleton: FC<VideoGallerySkeletonProps> = ({ skeleton }) => {
+const VideoCardGallerySkeleton: FC<VideoCardGallerySkeletonProps> = ({
+    skeleton,
+}) => {
     const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
-        <div className={styles.container}>
-            <div className={styles.videos}>
+        <div className={styles.gallery}>
+            <div className={styles.gallery__videos}>
                 {skeletons.map((skeleton) => (
                     <VideoCardSkeleton key={skeleton} />
                 ))}
@@ -22,4 +24,4 @@ const VideoGallerySkeleton: FC<VideoGallerySkeletonProps> = ({ skeleton }) => {
     );
 };
 
-export default memo(VideoGallerySkeleton);
+export default memo(VideoCardGallerySkeleton);

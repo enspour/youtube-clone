@@ -14,7 +14,7 @@ interface HeaderMenuBackProps {
 
 const HeaderMenuBack: FC<HeaderMenuBackProps> = ({ text }) => {
     return (
-        <div className={styles.header__menu__back}>
+        <div className={styles["header__menu-back"]}>
             <Icon svg={BackIcon} />
             <span>{text}</span>
         </div>

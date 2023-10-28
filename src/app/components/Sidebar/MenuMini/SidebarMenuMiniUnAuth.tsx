@@ -11,21 +11,21 @@ const SidebarMenuMiniUnAuth: FC = () => {
         <Menu>
             <MenuGroup>
                 <MenuLink href="/">
-                    <div className={styles.sidebar__mini__item}>Home</div>
+                    <div className={styles["sidebar__item--mini"]}>Home</div>
                 </MenuLink>
 
                 <MenuLink href="/subscriptions">
-                    <div className={styles.sidebar__mini__item}>
+                    <div className={styles["sidebar__item--mini"]}>
                         Subscriptions
                     </div>
                 </MenuLink>
 
                 <MenuLink href="/library">
-                    <div className={styles.sidebar__mini__item}>Library</div>
+                    <div className={styles["sidebar__item--mini"]}>Library</div>
                 </MenuLink>
 
                 <MenuLink href="/history">
-                    <div className={styles.sidebar__mini__item}>History</div>
+                    <div className={styles["sidebar__item--mini"]}>History</div>
                 </MenuLink>
             </MenuGroup>
         </Menu>

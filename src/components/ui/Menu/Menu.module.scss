@@ -22,19 +22,19 @@
     &:last-child {
         border-bottom: none;
     }
+}
 
-    &__title {
-        color: var(--color);
-        margin-top: 1.2rem;
-        margin-bottom: 0.8rem;
-        margin-left: 1.2rem;
-    }
+.group__title {
+    color: var(--color);
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+    margin-left: 1.2rem;
+}
 
-    &__items {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-    }
+.group__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
 .link,
@@ -55,6 +55,6 @@
     }
 }
 
-.link__active {
+.list--active {
     background-color: var(--bg-hover);
 }

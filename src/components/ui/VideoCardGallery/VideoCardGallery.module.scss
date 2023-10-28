@@ -1,8 +1,8 @@
 $min-elem-width: 30rem;
 $max-elem-width: 40rem;
 
-.container {
-    container-name: videos;
+.gallery {
+    container-name: gallery;
     container-type: inline-size;
 
     width: 100%;
@@ -10,7 +10,7 @@ $max-elem-width: 40rem;
     justify-content: center;
 }
 
-.videos {
+.gallery__videos {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($min-elem-width, 1fr));
@@ -18,8 +18,8 @@ $max-elem-width: 40rem;
     gap: 5rem 1rem;
 }
 
-@container videos (max-width: 1245px) {
-    .videos {
+@container gallery (max-width: 1245px) {
+    .gallery__videos {
         grid-template-columns: repeat(
             3,
             minmax($min-elem-width, $max-elem-width)
@@ -27,8 +27,8 @@ $max-elem-width: 40rem;
     }
 }
 
-@container videos (max-width: 935px) {
-    .videos {
+@container gallery (max-width: 935px) {
+    .gallery__videos {
         grid-template-columns: repeat(
             2,
             minmax($min-elem-width, $max-elem-width)
@@ -36,8 +36,8 @@ $max-elem-width: 40rem;
     }
 }
 
-@container videos (max-width: 625px) {
-    .videos {
+@container gallery (max-width: 625px) {
+    .gallery__videos {
         grid-template-columns: 40rem;
     }
 }

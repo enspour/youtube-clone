@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { VideoList } from "@/components/ui/VideoList";
+import { VideoCardList } from "@/components/ui/VideoCardList";
 
 import { Video } from "@/interfaces";
 
@@ -14,9 +14,9 @@ interface SuggestionsProps {
 
 const Suggestions: FC<SuggestionsProps> = ({ videos, skeleton, onEnd }) => {
     return (
-        <div className={styles.suggestions}>
+        <div>
             <div className={styles.suggestions__vertical}>
-                <VideoList
+                <VideoCardList
                     type="vertical"
                     videos={videos}
                     skeleton={skeleton}
@@ -25,7 +25,7 @@ const Suggestions: FC<SuggestionsProps> = ({ videos, skeleton, onEnd }) => {
             </div>
 
             <div className={styles.suggestions__horizontal}>
-                <VideoList
+                <VideoCardList
                     type="horizontal"
                     videos={videos}
                     skeleton={skeleton}

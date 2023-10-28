@@ -28,7 +28,7 @@ const HeaderMenuMain: FC = () => {
     return (
         <>
             <MenuGroup>
-                <div className={styles.header__menu__user}>
+                <div className={styles["header__menu-user"]}>
                     <UserAvatarSkeleton diameter="4rem" />
 
                     <div>

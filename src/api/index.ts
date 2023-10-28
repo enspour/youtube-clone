@@ -1,5 +1,5 @@
-import { UsersServerActionsApi } from "./server-actions/Users.api";
-import { VideosServerActionsApi } from "./server-actions/Videos.api";
+import { ServerActionsUsersApi } from "./server-actions/Users.api";
+import { ServerActionsVideosApi } from "./server-actions/Videos.api";
 
-export const usersApi = new UsersServerActionsApi();
-export const videosApi = new VideosServerActionsApi();
+export const usersApi = new ServerActionsUsersApi();
+export const videosApi = new ServerActionsVideosApi();

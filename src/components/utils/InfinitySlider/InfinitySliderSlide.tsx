@@ -14,7 +14,7 @@ const InfinitySliderSlide: FC<InfinitySliderSlideProps> = ({ children }) => {
     const { index } = useIndex();
 
     return (
-        <div className={styles.slide} style={getStyle(index)}>
+        <div className={styles.slider__slide} style={getStyle(index)}>
             {children}
         </div>
     );

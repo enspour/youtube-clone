@@ -5,15 +5,15 @@ import { VideoCard, VideoCardSkeleton } from "../VideoCard";
 
 import { Video } from "@/interfaces";
 
-import styles from "./VideoGallery.module.scss";
+import styles from "./VideoCardGallery.module.scss";
 
-interface VideoGalleryProps {
+interface VideoCardGalleryProps {
     videos: Video[];
     skeleton?: number;
     onEnd?: () => void;
 }
 
-const VideoGallery: FC<VideoGalleryProps> = ({
+const VideoCardGallery: FC<VideoCardGalleryProps> = ({
     videos,
     skeleton = 0,
     onEnd,
@@ -21,8 +21,8 @@ const VideoGallery: FC<VideoGalleryProps> = ({
     const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
-        <div className={styles.container}>
-            <div className={styles.videos}>
+        <div className={styles.gallery}>
+            <div className={styles.gallery__videos}>
                 {videos.map((video) => (
                     <VideoCard key={video.id} video={video} />
                 ))}
@@ -37,4 +37,4 @@ const VideoGallery: FC<VideoGalleryProps> = ({
     );
 };
 
-export default memo(VideoGallery);
+export default memo(VideoCardGallery);

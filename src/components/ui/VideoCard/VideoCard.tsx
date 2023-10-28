@@ -34,7 +34,7 @@ const VideoCard: FC<VideoCardProps> = ({
 
     return (
         <div
-            className={styles.video}
+            className={styles.container}
             style={getStyle(direction, palette)}
             onClick={open}
         >

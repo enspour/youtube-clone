@@ -22,7 +22,7 @@ const MenuLink: FC<MenuLinkProps> = ({ children, href }) => {
             href={href}
             className={classes(
                 styles.link,
-                activePathname === href ? styles.link__active : ""
+                activePathname === href ? styles["list--active"] : ""
             )}
         >
             {children}

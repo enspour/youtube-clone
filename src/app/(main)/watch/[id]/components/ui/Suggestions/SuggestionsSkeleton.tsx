@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 
-import { VideoListSkeleton } from "@/components/ui/VideoList";
+import { VideoCardListSkeleton } from "@/components/ui/VideoCardList";
 
 import styles from "./Suggestions.module.scss";
 
@@ -12,11 +12,11 @@ const SuggestionsSkeleton: FC<SuggestionsSkeletonProps> = ({ skeleton }) => {
     return (
         <div className={styles.suggestions}>
             <div className={styles.suggestions__vertical}>
-                <VideoListSkeleton type="vertical" skeleton={skeleton} />
+                <VideoCardListSkeleton type="vertical" skeleton={skeleton} />
             </div>
 
             <div className={styles.suggestions__horizontal}>
-                <VideoListSkeleton type="horizontal" skeleton={skeleton} />
+                <VideoCardListSkeleton type="horizontal" skeleton={skeleton} />
             </div>
         </div>
     );

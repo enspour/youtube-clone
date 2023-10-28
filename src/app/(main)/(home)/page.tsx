@@ -3,9 +3,9 @@
 import { useEffect } from "react";
 
 import {
-    VideoGallery,
-    VideoGallerySkeleton,
-} from "@/components/ui/VideoGallery";
+    VideoCardGallery,
+    VideoCardGallerySkeleton,
+} from "@/components/ui/VideoCardGallery";
 
 import { useHomeVideosStore } from "@/stores";
 
@@ -29,11 +29,11 @@ export default function Page() {
     return (
         <div className={styles.gallery}>
             {videos.length === 0 ? (
-                <VideoGallerySkeleton skeleton={offset} />
+                <VideoCardGallerySkeleton skeleton={offset} />
             ) : status === "pending" ? (
-                <VideoGallery videos={videos} skeleton={offset} />
+                <VideoCardGallery videos={videos} skeleton={offset} />
             ) : (
-                <VideoGallery videos={videos} onEnd={onEnd} />
+                <VideoCardGallery videos={videos} onEnd={onEnd} />
             )}
         </div>
     );

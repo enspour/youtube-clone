@@ -1,3 +1,5 @@
+"use server";
+
 import videos from "../../data/generated/videos.json";
 
 import { ApiResponse, Video } from "@/interfaces";

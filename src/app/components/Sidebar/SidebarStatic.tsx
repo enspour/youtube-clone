@@ -21,7 +21,7 @@ const SidebarStatic: FC<SidebarStaticProps> = ({ normal, minimized }) => {
             className={classes(
                 styles.sidebar,
                 styles.sidebar__static,
-                isMinimized ? styles.sidebar__mini : styles.sidebar__full
+                isMinimized ? styles["sidebar--mini"] : styles["sidebar--full"]
             )}
         >
             {!isMinimized ? normal : minimized}

@@ -12,7 +12,7 @@ interface HeaderMenuForwardProps {
 
 const HeaderMenuForward: FC<HeaderMenuForwardProps> = ({ text }) => {
     return (
-        <div className={styles.header__menu__forward}>
+        <div className={styles["header__menu-forward"]}>
             <div>{text}</div>
             <Icon svg={ForwardIcon} />
         </div>

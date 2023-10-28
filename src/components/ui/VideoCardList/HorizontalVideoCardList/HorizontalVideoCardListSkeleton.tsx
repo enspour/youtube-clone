@@ -2,20 +2,20 @@ import { FC, memo } from "react";
 
 import { VideoCardSkeleton } from "../../VideoCard";
 
-import styles from "./HorizontalVideoList.module.scss";
+import styles from "./HorizontalVideoCardList.module.scss";
 
-export interface HorizontalVideoListSkeletonProps {
+export interface HorizontalVideoCardListSkeletonProps {
     type: "horizontal";
     skeleton: number;
 }
 
-const HorizontalVideoListSkeleton: FC<HorizontalVideoListSkeletonProps> = ({
-    skeleton,
-}) => {
+const HorizontalVideoCardListSkeleton: FC<
+    HorizontalVideoCardListSkeletonProps
+> = ({ skeleton }) => {
     const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
-        <div className={styles.videos}>
+        <div className={styles.list}>
             {skeletons.map((skeleton) => (
                 <VideoCardSkeleton key={skeleton} />
             ))}
@@ -23,4 +23,4 @@ const HorizontalVideoListSkeleton: FC<HorizontalVideoListSkeletonProps> = ({
     );
 };
 
-export default memo(HorizontalVideoListSkeleton);
+export default memo(HorizontalVideoCardListSkeleton);

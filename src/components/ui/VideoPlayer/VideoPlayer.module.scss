@@ -53,28 +53,28 @@
     gap: 2rem;
     cursor: pointer;
 
-    &__icon {
-        width: 2rem;
-        height: 1.8rem;
-        display: flex;
-        align-items: center;
-    }
-
-    &__range {
-        display: flex;
-        align-items: center;
-        width: 8rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.2s;
-    }
-
     &:hover {
         .footer__volume__range {
             visibility: visible;
             opacity: 1;
         }
     }
+}
+
+.footer__volume__icon {
+    width: 2rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer__volume__range {
+    display: flex;
+    align-items: center;
+    width: 8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
 }
 
 .footer__time {

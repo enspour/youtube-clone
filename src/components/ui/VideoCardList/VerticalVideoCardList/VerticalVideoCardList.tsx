@@ -5,16 +5,16 @@ import { VideoCard, VideoCardSkeleton } from "../../VideoCard";
 
 import { Video } from "@/interfaces";
 
-import styles from "./HorizontalVideoList.module.scss";
+import styles from "./VerticalVideoCardList.module.scss";
 
-export interface HorizontalVideoListProps {
-    type: "horizontal";
+export interface VerticalVideoCardListProps {
+    type: "vertical";
     videos: Video[];
     skeleton?: number;
     onEnd?: () => void;
 }
 
-const HorizontalVideoList: FC<HorizontalVideoListProps> = ({
+const VerticalVideoCardList: FC<VerticalVideoCardListProps> = ({
     videos,
     skeleton = 0,
     onEnd,
@@ -22,13 +22,17 @@ const HorizontalVideoList: FC<HorizontalVideoListProps> = ({
     const skeletons = [...new Array(skeleton)].map((_, skeleton) => skeleton);
 
     return (
-        <div className={styles.videos}>
+        <div className={styles.list}>
             {videos.map((video) => (
-                <VideoCard key={video.id} video={video} />
+                <VideoCard
+                    key={video.id}
+                    video={video}
+                    direction="horizontal"
+                />
             ))}
 
             {skeletons.map((skeleton) => (
-                <VideoCardSkeleton key={skeleton} />
+                <VideoCardSkeleton key={skeleton} direction="horizontal" />
             ))}
 
             <ObservableAnchor onVisible={onEnd} />
@@ -36,4 +40,4 @@ const HorizontalVideoList: FC<HorizontalVideoListProps> = ({
     );
 };
 
-export default memo(HorizontalVideoList);
+export default memo(VerticalVideoCardList);

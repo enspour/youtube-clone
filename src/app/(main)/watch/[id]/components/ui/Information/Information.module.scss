@@ -14,38 +14,22 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+}
 
-    &__name {
-        font-weight: 500;
-    }
+.info__user-name {
+    font-weight: 500;
+}
 
-    &__subscriptions {
-        font-size: 1.4rem;
-    }
+.info__user-subscriptions {
+    font-size: 1.4rem;
 }
 
 .info__controls {
     display: flex;
     align-items: center;
     gap: 1rem;
-
-    &__share {
-        display: block;
-    }
-
-    &__save {
-        display: block;
-    }
 }
 
 .info__more {
     width: 22rem;
-
-    &__share {
-        display: block;
-    }
-
-    &__save {
-        display: block;
-    }
 }

@@ -1,3 +1,5 @@
+"use server";
+
 import users from "../../data/generated/users.json";
 
 import { ApiResponse, User } from "@/interfaces";

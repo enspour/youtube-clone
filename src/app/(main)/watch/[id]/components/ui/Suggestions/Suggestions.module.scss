@@ -1,22 +1,18 @@
-.suggestions {
-    &__vertical {
-        display: block;
-    }
+.suggestions__vertical {
+    display: block;
+}
 
-    &__horizontal {
-        display: none;
-        overflow-x: scroll;
-    }
+.suggestions__horizontal {
+    display: none;
+    overflow-x: scroll;
 }
 
 @container layout (max-width: 1200px) {
-    .suggestions {
-        &__vertical {
-            display: none;
-        }
+    .suggestions__vertical {
+        display: none;
+    }
 
-        &__horizontal {
-            display: block;
-        }
+    .suggestions__horizontal {
+        display: block;
     }
 }

@@ -23,11 +23,11 @@ const InformationUser: FC<InformationUserProps> = ({ video }) => {
             <UserAvatarSkeleton diameter="4rem" />
 
             <div className="flex flex-col justify-center mr-2">
-                <div className={styles.info__user__name}>
+                <div className={styles["info__user-name"]}>
                     {video.owner.name}
                 </div>
 
-                <div className={styles.info__user__subscriptions}>
+                <div className={styles["info__user-subscriptions"]}>
                     {formatUserSubscriptions(video.owner.subscriptions)}
                 </div>
             </div>

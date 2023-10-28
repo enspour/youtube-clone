@@ -23,12 +23,16 @@ const FilledDoubleButton: FC<FilledDoubleButtonProps> = ({
     palette = "primary",
 }) => {
     return (
-        <div className={styles.button} style={getStyle(palette)}>
-            <button onClick={onClickLeft}>{renderLeft()}</button>
+        <div className={styles.container} style={getStyle(palette)}>
+            <button className={styles.button} onClick={onClickLeft}>
+                {renderLeft()}
+            </button>
 
             <div className={styles.line}></div>
 
-            <button onClick={onClickRight}>{renderRight()}</button>
+            <button className={styles.button} onClick={onClickRight}>
+                {renderRight()}
+            </button>
         </div>
     );
 };
